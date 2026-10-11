@@ -12,24 +12,26 @@ import com.uped.proyecto.modelo.Voluntario;
 
 public class Main {
     public static void main(String[] args) {
-        // 1. Crear el Gerente y mostrar su beneficio inicial
-        Gerente g = new Gerente("Marta Díaz", "05123456-7", 1200.0, 5);
-        System.out.println("--- Beneficios Individuales ---");
+        // Apartados 5.4 y 7: Gerente extends Empleado
+        Gerente g = new Gerente(
+                "Marta Díaz", "05123456-7", 1200.0, 5);
         System.out.println(g);
-        System.out.println("Beneficio: " + g.calcularBeneficioAnual());
+        System.out.println("Beneficio: "
+                + g.calcularBeneficioAnual());
 
-        // 2. Crear el DocenteInvestigador y mostrar su beneficio
+        // Ejercicio 8.2: DocenteInvestigador extends Docente
         DocenteInvestigador di = new DocenteInvestigador(
                 "Dr. Iván Reyes", "07321456-9",
                 "Ingeniería de Software", 8, 4);
         System.out.println(di);
-        System.out.println("Beneficio: " + di.calcularBeneficioAnual());
+        System.out.println("Beneficio: "
+                + di.calcularBeneficioAnual());
 
-        // 3. Aplicar la promoción (cambio de nombre)
+        // Apartado 5.6: protected a través de varios niveles
         g.promoverA("Marta Díaz Ruiz");
+        System.out.println(g);
 
-        // 4. Recorrido general con instanceof (Apartado 5.7 y Ejercicio 8.3)
-        System.out.println("\n--- Listado con instanceof ---");
+        // Apartado 5.7 y ejercicio 8.3: downcasting seguro con instanceof
         Persona[] personas = {
                 new Cliente("Ana", "0451...", "7777-1", 4000.0),
                 new Empleado("Luis", "0622...", 850.0),
@@ -42,7 +44,6 @@ public class Main {
                 g,
                 di
         };
-
         for (Persona p : personas) {
             if (p instanceof Gerente) {
                 Gerente gerente = (Gerente) p;
@@ -61,3 +62,4 @@ public class Main {
         }
     }
 }
+
