@@ -24,6 +24,7 @@ public class Gerente extends Empleado {
     public double calcularBeneficioAnual() {
         double base = super.calcularBeneficioAnual();
         return base + (tamanoEquipo * 25.0);
+
     }
 
     // SOBRECARGA (8.2, punto 2): mismo nombre, firma distinta (recibe un double)
@@ -36,4 +37,5 @@ public class Gerente extends Empleado {
         return presentarse() + " | Equipo: " + tamanoEquipo;
     }
 }
+
 
